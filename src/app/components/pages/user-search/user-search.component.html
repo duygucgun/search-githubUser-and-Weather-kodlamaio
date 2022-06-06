@@ -1,0 +1,24 @@
+<br><br>
+<div class="input-group mb-3">
+    <input type="text" id="username" [(ngModel)]="username" class="form-control" placeholder="Please write username" aria-label="Recipient's username" aria-describedby="button-addon2" >
+    <button class="btn btn-primary" type="button" id="button-addon2" (click)="getUserInf()">Search</button>
+</div>
+<div class="container" >
+    <div class="row justify-content-center" *ngIf="users && users.length>0" >
+        <div class="col-2 m-3" *ngFor="let user of users">
+            <div class="card" style="width: 18rem;">
+                <img src="{{user.avatar_url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{user.login}}</h5>
+                  <p class="card-text">{{user.type}}</p>
+                  <a href="{{user.html_url}}" class="btn btn-danger">Go Profile</a>
+                </div>
+            </div>           
+        </div>       
+    </div>
+    <div class="row justify-content-center" *ngIf="users && users.length==0">
+        Kullanıcı bulunamadı.
+    </div>
+</div>
+<br><br>
+

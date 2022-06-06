@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <div *ngFor="let user of users" class="col-2 m-3">
+            <div class="card" style="width: 18rem;">
+                <img src="{{user.avatar_url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{user.login}}</h5>
+                  <p class="card-text">{{user.type}}</p>
+                  <a href="{{user.html_url}}" class="btn btn-danger">Go Profile</a>
+                </div>
+            </div>    
+        </div>
+    </div>
+</div>
+
+  
